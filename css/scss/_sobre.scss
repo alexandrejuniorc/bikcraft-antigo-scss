@@ -12,11 +12,22 @@
   line-height: 25px;
   margin-bottom: 1em;
   padding-right: 60px;
+
+  @include responsivo(mobile) {
+    font-size: 14px;
+    line-height: 20px;
+    padding-right: 0px;
+  }
 }
 
 .missao_sobre ul li {
   @include tipo-2(14);
   line-height: 30px;
+
+  @include responsivo(mobile) {
+    font-size: 14px;
+    line-height: 25px;
+  }
 }
 
 .foto-equipe {

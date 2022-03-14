@@ -1,3 +1,17 @@
+//Criação do responsivo
+@mixin responsivo($dispositivo) {
+  @if $dispositivo == tablet {
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+      @content;
+    }
+  } @else if $dispositivo == mobile {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  }
+}
+
+//Criação do grid
 *,
 *:before,
 *:after {
@@ -54,7 +68,7 @@ $colunas: 16;
   clear: both;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 959px) {
+@include responsivo(tablet) {
   $container: 768;
 
   //faz a criação do grid especificamente como foi pedido
@@ -75,7 +89,7 @@ $colunas: 16;
   }
 }
 
-@media only screen and (max-width: 767px) {
+@include responsivo(mobile) {
   $container: 300;
 
   %mobile {
